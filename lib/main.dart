@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:padak_starter/model/movies_response.dart';
 
 import 'model/data/dummy.dart';
-import 'model/getMoviesResponse.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,31 +14,23 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Welcome to Flutter'),
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
+        ),
+        body: Center(
+          child: FutureBuilder(
+            future: loadJsonObject(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                final MoviesResponse data = snapshot.data;
+                return Text(data.movies[0]["date"]);
+              } else {
+                return Text("");
+              }
+            },
           ),
-          body: Center(
-              child: Text(getJsonObjectByStr(getDummy()).movies[0]['date']))),
+        ),
+      ),
     );
   }
 }
-
-//class MainPage extends StatelessWidget {
-//  MainPage({this.title}) : super();
-//  final String title;
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    // TODO: implement build
-//    return Scaffold(
-//      appBar: AppBar(
-//        title: Text(title),
-//      ),
-//      body: Center(
-//          child: Text(
-//            'Hello Flutter',
-//          )
-//      ),
-//    );
-//  }
-//}
