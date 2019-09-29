@@ -7,10 +7,10 @@ class MovieResponse {
   final String genre;
   final int grade;
   final String image;
-  final int reservation_grade;
+  final int reservationGrade;
   final String title;
-  final double reservation_rate;
-  final double user_rating;
+  final double reservationRate;
+  final double userRating;
   final String date;
   final String id;
 
@@ -24,10 +24,10 @@ class MovieResponse {
       this.genre,
       this.grade,
       this.image,
-      this.reservation_grade,
+      this.reservationGrade,
       this.title,
-      this.reservation_rate,
-      this.user_rating,
+      this.reservationRate,
+      this.userRating,
       this.date,
       this.id);
 
@@ -41,15 +41,15 @@ class MovieResponse {
         genre = json['genre'],
         grade = json['grade'],
         image = json['image'],
-        reservation_grade = json['reservation_grade'],
+        reservationGrade = json['reservation_grade'],
         title = json['title'],
-        reservation_rate = json['reservation_rate'],
-        user_rating = json['user_rating'],
+        reservationRate = json['reservation_rate'],
+        userRating = json['user_rating'],
         date = json['date'],
         id = json['id'];
 
   // MoviesResponse 객체를 map 구조로 변환
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toMap() => {
         'audience': audience,
         'actor': actor,
         'duration': duration,
@@ -58,10 +58,10 @@ class MovieResponse {
         'genre': genre,
         'grade': grade,
         'image': image,
-        'reservation_grade': reservation_grade,
+        'reservation_grade': reservationGrade,
         'title': title,
-        'reservation_rate': reservation_rate,
-        'user_rating': user_rating,
+        'reservation_rate': reservationRate,
+        'user_rating': userRating,
         'date': date,
         'id': id,
       };

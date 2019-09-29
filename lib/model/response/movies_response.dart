@@ -3,7 +3,10 @@ class MoviesResponse {
   final List<dynamic> movies;
 
   // 생성자
-  MoviesResponse(this.orderType, this.movies);
+  MoviesResponse(
+    this.orderType,
+    this.movies,
+  );
 
   // map 구조에서 새로운 MoviesResponse 객체를 생성
   MoviesResponse.fromJson(Map<String, dynamic> json)
@@ -11,7 +14,7 @@ class MoviesResponse {
         movies = json['movies'];
 
   // MoviesResponse 객체를 map 구조로 변환
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toMap() => {
         'order_type': orderType,
         'movies': movies,
       };

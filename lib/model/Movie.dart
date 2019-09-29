@@ -1,44 +1,45 @@
 class Movie {
   final String title;
-  final double user_rating;
+  final double userRating;
   final int grade;
-  final int reservation_grade;
+  final int reservationGrade;
   final String id;
   final String date;
   final String thumb;
-  final double reservation_rate;
+  final double reservationRate;
 
   // 생성자
-  Movie(this.title,
-      this.user_rating,
-      this.grade,
-      this.reservation_grade,
-      this.id,
-      this.date,
-      this.thumb,
-      this.reservation_rate);
+  Movie(
+    this.title,
+    this.userRating,
+    this.grade,
+    this.reservationGrade,
+    this.id,
+    this.date,
+    this.thumb,
+    this.reservationRate,
+  );
 
   // map 구조에서 새로운 Movie 객체를 생성
   Movie.fromJson(Map<String, dynamic> json)
       : title = json['title'],
-        user_rating = json['user_rating'],
+        userRating = json['user_rating'],
         grade = json['grade'],
-        reservation_grade = json['reservation_grade'],
+        reservationGrade = json['reservation_grade'],
         id = json['id'],
         date = json['date'],
         thumb = json['thumb'],
-        reservation_rate = json['reservation_rate'];
+        reservationRate = json['reservation_rate'];
 
   // Movie 객체를 map 구조로 변환
-  Map<String, dynamic> toJson() =>
-      {
+  Map<String, dynamic> toMap() => {
         'title': title,
-        'user_rating': user_rating,
+        'user_rating': userRating,
         'grade': grade,
-        'reservation_grade': reservation_grade,
+        'reservation_grade': reservationGrade,
         'id': id,
         'date': date,
         'thumb': thumb,
-        'reservation_rate': reservation_rate
+        'reservation_rate': reservationRate,
       };
 }

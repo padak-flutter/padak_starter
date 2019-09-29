@@ -1,8 +1,8 @@
 import 'dart:convert' as json;
 import 'package:flutter/services.dart';
-import 'package:padak_starter/model/response/MoviesResponse.dart';
-import 'package:padak_starter/model/response/MovieResponse.dart';
-import 'package:padak_starter/model/response/CommentsResponse.dart';
+import 'package:padak_starter/model/response/comments_response.dart';
+import 'package:padak_starter/model/response/movie_response.dart';
+import 'package:padak_starter/model/response/movies_response.dart';
 
 Future<String> loadJsonStr(String assetPath) async {
   final jsonCrossword = await rootBundle.loadString(assetPath);

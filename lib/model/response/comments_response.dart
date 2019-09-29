@@ -9,7 +9,5 @@ class CommentsResponse {
       : comments = json['comments'];
 
   // MoviesResponse 객체를 map 구조로 변환
-  Map<String, dynamic> toJson() => {
-        'comments': comments
-      };
+  Map<String, dynamic> toMap() => {'comments': comments};
 }
