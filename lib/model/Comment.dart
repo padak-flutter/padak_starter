@@ -1,4 +1,4 @@
-class CommentResponse {
+class Comment {
   final double rating;
   final double timestamp;
   final String writer;
@@ -7,7 +7,7 @@ class CommentResponse {
   final String id;
 
   // 생성자
-  CommentResponse(
+  Comment(
     this.rating,
     this.timestamp,
     this.writer,
@@ -17,7 +17,7 @@ class CommentResponse {
   );
 
   // map 구조에서 새로운 CommentsResponse 객체를 생성
-  CommentResponse.fromJson(Map<String, dynamic> json)
+  Comment.fromJson(Map<String, dynamic> json)
       : rating = json['rating'],
         timestamp = json['timestamp'],
         writer = json['writer'],
