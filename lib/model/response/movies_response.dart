@@ -3,10 +3,10 @@ class MoviesResponse {
   final List<dynamic> movies;
 
   // 생성자
-  MoviesResponse(
+  const MoviesResponse({
     this.orderType,
     this.movies,
-  );
+  });
 
   // map 구조에서 새로운 MoviesResponse 객체를 생성
   MoviesResponse.fromJson(Map<String, dynamic> json)

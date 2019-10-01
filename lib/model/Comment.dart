@@ -7,16 +7,16 @@ class Comment {
   final String id;
 
   // 생성자
-  Comment(
+  const Comment({
     this.rating,
     this.timestamp,
     this.writer,
     this.movieId,
     this.contents,
     this.id,
-  );
+  });
 
-  // map 구조에서 새로운 CommentsResponse 객체를 생성
+  // map 구조에서 새로운 Comment 객체를 생성
   Comment.fromJson(Map<String, dynamic> json)
       : rating = json['rating'],
         timestamp = json['timestamp'],
@@ -25,8 +25,8 @@ class Comment {
         contents = json['contents'],
         id = json['id'];
 
-  // CommentsResponse 객체를 map 구조로 변환
-  Map<String, dynamic> toJson() => {
+  // Comment 객체를 map 구조로 변환
+  Map<String, dynamic> toMap() => {
         'rating': rating,
         'timestamp': timestamp,
         'writer': writer,

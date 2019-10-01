@@ -9,7 +9,7 @@ class Movie {
   final double reservationRate;
 
   // 생성자
-  Movie(
+  const Movie({
     this.title,
     this.userRating,
     this.grade,
@@ -18,7 +18,7 @@ class Movie {
     this.date,
     this.thumb,
     this.reservationRate,
-  );
+  });
 
   // map 구조에서 새로운 Movie 객체를 생성
   Movie.fromJson(Map<String, dynamic> json)

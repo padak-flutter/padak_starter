@@ -15,7 +15,7 @@ class MovieResponse {
   final String id;
 
   // 생성자
-  MovieResponse(
+  const MovieResponse({
       this.audience,
       this.actor,
       this.duration,
@@ -29,9 +29,9 @@ class MovieResponse {
       this.reservationRate,
       this.userRating,
       this.date,
-      this.id);
+      this.id});
 
-  // map 구조에서 새로운 MoviesResponse 객체를 생성
+  // map 구조에서 새로운 MovieResponse 객체를 생성
   MovieResponse.fromJson(Map<String, dynamic> json)
       : audience = json['audience'],
         actor = json['actor'],
@@ -48,7 +48,7 @@ class MovieResponse {
         date = json['date'],
         id = json['id'];
 
-  // MoviesResponse 객체를 map 구조로 변환
+  // MovieResponse 객체를 map 구조로 변환
   Map<String, dynamic> toMap() => {
         'audience': audience,
         'actor': actor,

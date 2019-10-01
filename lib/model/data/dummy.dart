@@ -4,11 +4,13 @@ import 'package:padak_starter/model/response/comments_response.dart';
 import 'package:padak_starter/model/response/movie_response.dart';
 import 'package:padak_starter/model/response/movies_response.dart';
 
+@Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<String> loadJsonStr(String assetPath) async {
   final jsonCrossword = await rootBundle.loadString(assetPath);
   return jsonCrossword;
 }
 
+@Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<MoviesResponse> loadMoviesData(String assetPath) async {
   final jsonString = await loadJsonStr(assetPath);
   final Map userMap = json.jsonDecode(jsonString);
@@ -16,6 +18,7 @@ Future<MoviesResponse> loadMoviesData(String assetPath) async {
   return data;
 }
 
+@Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<MovieResponse> loadMovieData(String assetPath) async {
   final jsonString = await loadJsonStr(assetPath);
   final Map userMap = json.jsonDecode(jsonString);
@@ -23,6 +26,7 @@ Future<MovieResponse> loadMovieData(String assetPath) async {
   return data;
 }
 
+@Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<CommentsResponse> loadCommentsData(String assetPath) async {
   final jsonString = await loadJsonStr(assetPath);
   final Map userMap = json.jsonDecode(jsonString);
