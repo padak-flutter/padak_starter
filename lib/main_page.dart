@@ -1,6 +1,4 @@
 import "package:flutter/material.dart";
-import 'package:padak_starter/model/data/dummys_repository.dart';
-import 'package:padak_starter/model/response/movie_response.dart';
 
 class MainPage extends StatelessWidget {
   @override
