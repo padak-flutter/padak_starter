@@ -1,35 +1,35 @@
 class MovieResponse {
-  final int audience;
-  final String actor;
-  final int duration;
-  final String director;
-  final String synopsis;
-  final String genre;
-  final int grade;
-  final String image;
-  final int reservationGrade;
-  final String title;
-  final double reservationRate;
-  final double userRating;
-  final String date;
-  final String id;
+  int audience;
+  String actor;
+  int duration;
+  String director;
+  String synopsis;
+  String genre;
+  int grade;
+  String image;
+  int reservationGrade;
+  String title;
+  double reservationRate;
+  double userRating;
+  String date;
+  String id;
 
   // 생성자
-  const MovieResponse({
-      this.audience,
+  MovieResponse(
       this.actor,
-      this.duration,
-      this.director,
-      this.synopsis,
-      this.genre,
-      this.grade,
-      this.image,
-      this.reservationGrade,
-      this.title,
-      this.reservationRate,
-      this.userRating,
       this.date,
-      this.id});
+      this.director,
+      this.audience,
+      this.userRating,
+      this.id,
+      this.reservationGrade,
+      this.grade,
+      this.title,
+      this.genre,
+      this.image,
+      this.duration,
+      this.synopsis,
+      this.reservationRate);
 
   // map 구조에서 새로운 MovieResponse 객체를 생성
   MovieResponse.fromJson(Map<String, dynamic> json)
@@ -49,20 +49,22 @@ class MovieResponse {
         id = json['id'];
 
   // MovieResponse 객체를 map 구조로 변환
-  Map<String, dynamic> toMap() => {
-        'audience': audience,
-        'actor': actor,
-        'duration': duration,
-        'director': director,
-        'synopsis': synopsis,
-        'genre': genre,
-        'grade': grade,
-        'image': image,
-        'reservation_grade': reservationGrade,
-        'title': title,
-        'reservation_rate': reservationRate,
-        'user_rating': userRating,
-        'date': date,
-        'id': id,
-      };
+  Map<String, dynamic> toMap() {
+    final map = Map<String, dynamic>();
+    map['actor'] = actor;
+    map['date'] = date;
+    map['director'] = director;
+    map['audience'] = audience;
+    map['user_rating'] = userRating;
+    map['id'] = id;
+    map['reservation_grade'] = reservationGrade;
+    map['grade'] = grade;
+    map['title'] = title;
+    map['genre'] = genre;
+    map['image'] = image;
+    map['duration'] = duration;
+    map['synopsis'] = synopsis;
+    map['reservation_rate'] = reservationRate;
+    return map;
+  }
 }
