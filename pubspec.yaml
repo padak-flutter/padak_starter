@@ -24,6 +24,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  # 2-1. 상세화면 (NumberFormat 라이브러리 임포트)
+  intl: ^0.16.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

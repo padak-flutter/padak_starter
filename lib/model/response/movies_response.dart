@@ -31,13 +31,21 @@ class MoviesResponse {
 }
 
 class Movie {
+  // 영화 제목
   String title;
-  double userRating;
+  // 사용자 평점
+  int userRating;
+  // 관람 등급 (0 : 전체 / 12 : 12세 / 15 : 15세 / 19 :19세)
   int grade;
+  // 예매 순위
   int reservationGrade;
+  // 영화 고유 id
   String id;
+  // 개봉일
   String date;
+  // 포스터 이미지 섬네일 주소
   String thumb;
+  // 예매율
   double reservationRate;
 
   Movie(

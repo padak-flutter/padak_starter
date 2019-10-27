@@ -27,7 +27,7 @@ class CommentsResponse {
 }
 
 class Comment {
-  double timestamp;
+  int timestamp;
   String id;
   String movieId;
   double rating;
