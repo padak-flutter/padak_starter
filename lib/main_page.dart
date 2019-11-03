@@ -15,7 +15,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // 1-1. 상단화면 (제목 수정)
-        title: Text('Movie'),
+        title: Text('Flutter'),
         // 1-1. 상단화면 (좌, 우측 버튼 추가)
       ),
       // 1-2. 탭 화면 (List, Grid Widget 연동)
