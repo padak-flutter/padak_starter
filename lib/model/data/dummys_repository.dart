@@ -22,7 +22,7 @@ class DummysRepository {
   static CommentsResponse loadDummyComments(String movieId) => loadComments(movieId);
   static CommentsResponse loadComments(String movieId) {
     final targetCommentsResponse =
-        commentsResponses.firstWhere((movie) => movie.movieId == movieId);
+    commentsResponses.firstWhere((movie) => movie.movieId == movieId);
     return targetCommentsResponse;
   }
 
@@ -156,7 +156,7 @@ class DummysRepository {
         1,
         '5a54c286e8a71d136fb5378e',
         '2017-12-20',
-        'http://movie.phinf.naver.net/20171201_181/1512109983114kcQVl_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/1.jpg',
         35.5),
     Movie(
         '저스티스 리그',
@@ -165,7 +165,7 @@ class DummysRepository {
         2,
         '5a54c1e9e8a71d136fb5376c',
         '2017-11-15',
-        'http://movie2.phinf.naver.net/20170925_296/150631600340898aUX_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/2.jpg',
         12.63),
     Movie(
         '토르:라그나로크',
@@ -174,7 +174,7 @@ class DummysRepository {
         3,
         '5a54c1f2e8a71d136fb5376e',
         '2017-10-25',
-        'http://movie2.phinf.naver.net/20170928_85/1506564710105ua5fS_PNG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/3.png',
         6.73),
     Movie(
         '러빙 빈센트',
@@ -183,7 +183,7 @@ class DummysRepository {
         4,
         '5a54c1fbe8a71d136fb53770',
         '2017-11-09',
-        'http://movie2.phinf.naver.net/20171013_210/1507861351048TMJcR_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/4.jpg',
         3.82),
     Movie(
         '범죄도시',
@@ -192,7 +192,7 @@ class DummysRepository {
         5,
         '5a54c207e8a71d136fb53772',
         '2017-10-03',
-        'http://movie2.phinf.naver.net/20170915_299/1505458505658vbKcN_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/5.jpg',
         2.37),
     Movie(
         '꾼',
@@ -201,7 +201,7 @@ class DummysRepository {
         6,
         '5a54be21e8a71d136fb536a1',
         '2017-11-22',
-        'http://movie2.phinf.naver.net/20171107_251/1510033896133nWqxG_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/6.jpg',
         61.69),
     Movie(
         '쥬만지: 새로운 세계',
@@ -210,7 +210,7 @@ class DummysRepository {
         7,
         '5a54c2f8e8a71d136fb537a7',
         '2018-01-03',
-        'http://movie.phinf.naver.net/20171127_196/1511757905894vduNA_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/7.jpg',
         14.93),
     Movie(
         '뽀로로 공룡섬 대모험',
@@ -219,7 +219,7 @@ class DummysRepository {
         8,
         '5a54df5ee8a71d136fb53d75',
         '2017-12-07',
-        'http://movie.phinf.naver.net/20171102_209/1509602233507BiJrs_JPEG/movie_image.jpg?type=m99_141_2',
+        'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/8.jpg',
         1.93),
   ]);
   static List<CommentsResponse> commentsResponses = <CommentsResponse>[
