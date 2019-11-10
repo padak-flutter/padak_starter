@@ -1,18 +1,32 @@
 class MovieResponse {
-  int audience;
+  // 배우진
   String actor;
-  int duration;
-  String director;
-  String synopsis;
-  String genre;
-  int grade;
-  String image;
-  int reservationGrade;
-  String title;
-  double reservationRate;
-  double userRating;
+  // 개봉일
   String date;
+  // 감독
+  String director;
+  // 총 관람객수
+  int audience;
+  // 유저 평점
+  double userRating;
+  // 영화 고유 ID
   String id;
+  // 예매율
+  double reservationRate;
+  // 관람 등급 (0 : 전체 / 12 : 12세 / 15 : 15세 / 19 :19세)
+  int grade;
+  // 제목
+  String title;
+  // 장르명
+  String genre;
+  // 포스터 이미지 URL
+  String image;
+  // 영화 상영길이
+  int duration;
+  // 줄거리
+  String synopsis;
+  // 예매 순위
+  int reservationGrade;
 
   // 생성자
   MovieResponse(
@@ -33,20 +47,20 @@ class MovieResponse {
 
   // map 구조에서 새로운 MovieResponse 객체를 생성
   MovieResponse.fromJson(Map<String, dynamic> json)
-      : audience = json['audience'],
-        actor = json['actor'],
-        duration = json['duration'],
-        director = json['director'],
-        synopsis = json['synopsis'],
-        genre = json['genre'],
-        grade = json['grade'],
-        image = json['image'],
-        reservationGrade = json['reservation_grade'],
-        title = json['title'],
-        reservationRate = json['reservation_rate'],
-        userRating = json['user_rating'],
+      : actor = json['actor'],
         date = json['date'],
-        id = json['id'];
+        director = json['director'],
+        audience = json['audience'],
+        userRating = json['user_rating'],
+        id = json['id'],
+        reservationGrade = json['reservation_grade'],
+        grade = json['grade'],
+        title = json['title'],
+        genre = json['genre'],
+        image = json['image'],
+        duration = json['duration'],
+        synopsis = json['synopsis'],
+        reservationRate = json['reservation_rate'];
 
   // MovieResponse 객체를 map 구조로 변환
   Map<String, dynamic> toMap() {

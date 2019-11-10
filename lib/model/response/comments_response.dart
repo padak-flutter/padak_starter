@@ -27,12 +27,18 @@ class CommentsResponse {
 }
 
 class Comment {
-  int timestamp;
-  String id;
-  String movieId;
+  // 평점
   double rating;
-  String contents;
+  // 한줄평 고유 ID
+  String id;
+  // 작성일시 UnixStamp 값
+  int timestamp;
+  // 작성자
   String writer;
+  // 한줄평 내용
+  String contents;
+  // 영화 고유 ID
+  String movieId;
 
   Comment({
     this.rating,
@@ -44,22 +50,22 @@ class Comment {
   });
 
   Comment.fromJson(Map<String, dynamic> json) {
-    timestamp = json['timestamp'];
-    id = json['id'];
-    movieId = json['movie_id'];
     rating = json['rating'].toDouble();
-    contents = json['contents'];
+    id = json['id'];
+    timestamp = json['timestamp'];
     writer = json['writer'];
+    contents = json['contents'];
+    movieId = json['movie_id'];
   }
 
   Map<String, dynamic> toMap() {
     final map = Map<String, dynamic>();
-    map['timestamp'] = timestamp;
-    map['id'] = id;
-    map['movie_id'] = movieId;
     map['rating'] = rating;
-    map['contents'] = contents;
+    map['id'] = id;
+    map['timestamp'] = timestamp;
     map['writer'] = writer;
+    map['contents'] = contents;
+    map['movie_id'] = movieId;
     return map;
   }
 }
