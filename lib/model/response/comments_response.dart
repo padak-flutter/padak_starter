@@ -27,8 +27,8 @@ class CommentsResponse {
 }
 
 class Comment {
-  // 평점
-  double rating;
+  // 평점 (1 ~ 10)
+  int rating;
   // 한줄평 고유 ID
   String id;
   // 작성일시 UnixStamp 값
@@ -50,7 +50,7 @@ class Comment {
   });
 
   Comment.fromJson(Map<String, dynamic> json) {
-    rating = json['rating'].toDouble();
+    rating = json['rating'];
     id = json['id'];
     timestamp = json['timestamp'];
     writer = json['writer'];
@@ -69,4 +69,3 @@ class Comment {
     return map;
   }
 }
-

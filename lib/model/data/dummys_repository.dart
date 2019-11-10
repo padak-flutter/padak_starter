@@ -318,14 +318,14 @@ class DummysRepository {
           contents: '저스티스리그으으',
           movieId: '5a54c1e9e8a71d136fb5376c'),
       Comment(
-          rating: 7.69553089141846,
+          rating: 7,
           id: '5d81df371b865e90542b7b49',
           timestamp: 1568792375,
           writer: 'aaa',
           contents: 'aaa',
           movieId: '5a54c1e9e8a71d136fb5376c'),
       Comment(
-          rating: 9.9162015914917,
+          rating: 9,
           id: '5d81df001b865e90542b7b48',
           timestamp: 1568792320,
           writer: '마무리',
@@ -339,7 +339,7 @@ class DummysRepository {
           contents: '테스트!',
           movieId: '5a54c1e9e8a71d136fb5376c'),
       Comment(
-          rating: 9.776535987854,
+          rating: 9,
           id: '5d81d29b1b865e90542b7b44',
           timestamp: 1568789147,
           writer: 'test',
@@ -425,7 +425,7 @@ class DummysRepository {
           contents: '토르님 사랑합니다',
           movieId: '5a54c1f2e8a71d136fb5376e'),
       Comment(
-          rating: 7.73743009567261,
+          rating: 7,
           id: '5d81d2d11b865e90542b7b45',
           timestamp: 1568789201,
           writer: 'test2',
@@ -532,7 +532,7 @@ class DummysRepository {
           contents: '이 작품을 보게되네요!',
           movieId: '5a54c1fbe8a71d136fb53770'),
       Comment(
-          rating: 2.36033511161804,
+          rating: 2,
           id: '5d806d1f1b865e90542b7b32',
           timestamp: 1568697631,
           writer: 'hello',
