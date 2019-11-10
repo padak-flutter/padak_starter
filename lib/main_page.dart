@@ -16,7 +16,10 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         // 1-1. 상단화면 (제목 수정)
         title: Text('Flutter'),
-        // 1-1. 상단화면 (좌, 우측 버튼 추가)
+        // 1-1. 상단화면 (좌측 버튼 추가)
+
+        // 1-1. 상단화면 (우측 팝업 버튼 및 이벤트 추가)
+
       ),
       // 1-2. 탭 화면 (List, Grid Widget 연동)
       body: Center(child: Text("Hello Flutter")),
