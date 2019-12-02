@@ -8,7 +8,7 @@ class MovieResponse {
   // 총 관람객수
   int audience;
   // 유저 평점
-  double userRating;
+  int userRating;
   // 영화 고유 ID
   String id;
   // 예매율
