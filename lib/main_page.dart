@@ -5,6 +5,7 @@ import "package:flutter/material.dart";
 // 1-2. 탭 화면 (Stateless -> Stateful)
 class MainPage extends StatelessWidget {
   // 1-2. 탭 화면 (_selectedTabIndex 변수 옮김)
+
   // 1-2. 탭 화면 (탭 인덱스 설정)
 
   // 1-2. 탭 화면 (createState 함수 추가)
@@ -29,5 +30,3 @@ class MainPage extends StatelessWidget {
 }
 
 // 1-2. 탭 화면 (State 구현)
-
-// 1-2. 탭 화면 (List, Grid Widget 반환)
