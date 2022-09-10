@@ -41,7 +41,7 @@ class DummysRepository {
       grade: 12,
       title: '신과함께-죄와벌',
       genre: '판타지, 드라마',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/1.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/1.jpg',
       duration: 139,
       synopsis:
           '저승 법에 의하면, 모든 인간은 사후 49일 동안 7번의 재판을 거쳐야만 한다. 살인, 나태, 거짓, 불의, 배신, 폭력, 천륜 7개의 지옥에서 7번의 재판을 무사히 통과한 망자만이 환생하여 새로운 삶을 시작할 수 있다. \n\n “김자홍 씨께선, 오늘 예정 대로 무사히 사망하셨습니다” \n\n화재 사고 현장에서 여자아이를 구하고 죽음을 맞이한 소방관 자홍, 그의 앞에 저승차사 해원맥과 덕춘이 나타난다.\n자신의 죽음이 아직 믿기지도 않는데 덕춘은 정의로운 망자이자 귀인이라며 그를 치켜세운다.\n저승으로 가는 입구, 초군문에서 그를 기다리는 또 한 명의 차사 강림, 그는 차사들의 리더이자 앞으로 자홍이 겪어야 할 7개의 재판에서 변호를 맡아줄 변호사이기도 하다.\n염라대왕에게 천년 동안 49명의 망자를 환생시키면 자신들 역시 인간으로 환생시켜 주겠다는 약속을 받은 삼차사들, 그들은 자신들이 변호하고 호위해야 하는 48번째 망자이자 19년 만에 나타난 의로운 귀인 자홍의 환생을 확신하지만, 각 지옥에서 자홍의 과거가 하나 둘씩 드러나면서 예상치 못한 고난과 맞닥뜨리는데…\n\n누구나 가지만 아무도 본 적 없는 곳, 새로운 세계의 문이 열린다!',
@@ -58,7 +58,7 @@ class DummysRepository {
       grade: 12,
       title: '저스티스 리그',
       genre: '액션,모험,판타지,SF',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/2.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/2.jpg',
       duration: 120,
       synopsis:
           '인류의 수호자인 슈퍼맨이 사라진 틈을 노리고 ‘마더박스’를 차지하기 위해 빌런 스테픈울프가 악마군단을 이끌고 지구에 온다. 마더박스는 시간과 공간, 에너지, 중력을 통제하는 범우주적인 능력으로 행성의 파괴마저도 초래하는 물체로 이 강력한 힘을 통제하기 위해 고대부터 총 3개로 분리되어 보관되고 있던 것. 인류에 대한 믿음을 되찾고 슈퍼맨의 희생 정신에 마음이 움직인 브루스 웨인은 새로운 동료인 다이애나 프린스에게 도움을 청해 이 거대한 적에 맞서기로 한다. 배트맨과 원더 우먼은 새로이 등장한 위협에 맞서기 위해 아쿠아맨, 사이보그, 플래시를 찾아 신속히 팀을 꾸린다. 이들 슈퍼히어로 완전체는 스테픈울프로부터 마더박스를 지키기 위해 지구의 운명을 건 전투를 벌인다!',
@@ -75,7 +75,7 @@ class DummysRepository {
       grade: 12,
       title: '토르:라그나로크',
       genre: '액션, 모험, 판타지, SF',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/3.png',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/3.png',
       duration: 130,
       synopsis:
           '피할 수 없는 세상의 멸망 ‘라그나로크’를 막아라! 죽음의 여신 ‘헬라’가 아스가르드를 침략하고, 세상은 모든 것의 종말 ‘라그나로크’의 위기에 처한다. 헬라에게 자신의 망치마저 파괴당한 토르는 어벤져스 동료인 헐크와도 피할 수 없는 대결을벌이면서 절체절명의 위기에 빠지게 되는데…',
@@ -92,7 +92,7 @@ class DummysRepository {
       grade: 15,
       title: '러빙 빈센트',
       genre: '애니메이션,미스터리',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/4.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/4.jpg',
       duration: 95,
       synopsis:
           "“당신은 그의 삶에 대해 무엇을 알죠?” 살아생전 단 한 점의 그림만을 팔았던 화가‘빈센트’의 죽음 후 1년. ‘아르망’은 그의 그림을 사랑했던 아버지의 부탁을 받고, ‘빈센트’가 마지막으로 살았던 장소로 찾아가 미스터리한 죽음을 추적해 나간다. ‘빈센트’를 그리워하는 여인 '마르그리트'. ‘빈센트’를 가장 가까운 곳에서 지켜봤던 ‘아들린’. ‘빈센트’의 비밀을 알고 있는 닥터 ‘폴 가셰’. ‘아르망’은 그들의 이야기를 듣고, 인간 ‘빈센트’에 대해 몰랐던 놀라운 사실들을 알게 되는데…",
@@ -109,7 +109,7 @@ class DummysRepository {
       grade: 19,
       title: '범죄도시',
       genre: '액션',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/5.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/5.jpg',
       duration: 121,
       synopsis:
           '“오늘 밤, 다 쓸어버린다!” 2004년 서울… 하얼빈에서 넘어와 단숨에 기존 조직들을 장악하고 가장 강력한 세력인 춘식이파 보스 ‘황사장(조재윤 분)’까지 위협하며 도시 일대의 최강자로 급부상한 신흥범죄조직의 악랄한 보스 ‘장첸(윤계상 분)’. 대한민국을 뒤흔든 ‘장첸(윤계상 분)’ 일당을 잡기 위해 오직 주먹 한방으로 도시의 평화를 유지해 온 괴물형사 ‘마석도(마동석 분)’와 인간미 넘치는 든든한 리더 ‘전일만(최귀화 분)’ 반장이 이끄는 강력반은 나쁜 놈들을 한방에 쓸어버릴 끝.짱.나.는. 작전을 세우는데… 통쾌하고! 화끈하고! 살벌하게! 나쁜 놈들 때려잡는 강력반 형사들의 ‘조폭소탕작전’이 시작된다!',
@@ -126,7 +126,7 @@ class DummysRepository {
       grade: 15,
       title: '꾼',
       genre: '범죄',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/6.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/6.jpg',
       duration: 117,
       synopsis:
           '‘희대의 사기꾼’을 잡기 위해 사기‘꾼’들이 뭉쳤다! “판 다시 짜야죠, 팀플레이로!” 대한민국을 발칵 뒤집어 놓은 ‘희대의 사기꾼’ 장두칠이 돌연 사망했다는 뉴스가 발표된다. 그러나 그가 아직 살아있다는 소문과 함께 그를 비호했던 권력자들이 의도적으로 풀어준 거라는 추측이 나돌기 시작한다. 사기꾼만 골라 속이는 사기꾼 지성(현빈)은 장두칠이 아직 살아있다며 사건 담당 검사 박희수(유지태)에게 그를 확실하게 잡자는 제안을 한다. 박검사의 비공식 수사 루트인 사기꾼 3인방 고석동(배성우), 춘자(나나), 김 과장(안세하)까지 합류시켜 잠적한 장두칠의 심복 곽승건(박성웅)에게 접근하기 위한 새로운 판을 짜기 시작한다. 하지만 박검사는 장두칠 검거가 아닌 또 다른 목적을 위해 은밀히 작전을 세우고, 이를 눈치 챈 지성과 다른 꾼들도 서로 속지 않기 위해 각자만의 계획을 세우기 시작하는데… 이 판에선 누구도 믿지 마라! 진짜 ‘꾼’들의 예측불가 팀플레이가 시작된다!',
@@ -143,7 +143,7 @@ class DummysRepository {
       grade: 12,
       title: '쥬만지: 새로운 세계',
       genre: '액션, 모험',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/7.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/7.jpg',
       duration: 118,
       synopsis:
           '학교 창고를 청소하다가 낡은 ‘쥬만지’ 비디오 게임을 발견한 네 명의 아이들.\n게임 버튼을 누르는 순간 화면 속으로 빨려 들어가버렸다! \n\n거대한 몸집의 고고학자 닥터 브레이브스톤(드웨인 존슨)으로 변한 공부벌레 스펜서, \n슈퍼 여전사 루비 라운드하우스(카렌 길런)가 된 운동신경 제로 마사, \n저질체력의 동물학 전문가 무스 핀바(케빈 하트)가 된 예비 풋볼선수 프리지, \n중년의 지도 연구학 교수 셸리 오베론(잭 블랙)으로 변해버린 SNS 중독 퀸카 베서니까지. \n\n게임 안에서 주어진 목숨의 기회는 단 세 번뿐! \n이들은 자신의 아바타가 가진 능력으로 게임 속 세계를 구해야만 현실로 돌아갈 수 있는데…',
@@ -160,7 +160,7 @@ class DummysRepository {
       grade: 10,
       title: '뽀로로 공룡섬 대모험',
       genre: '애니메이션',
-      image: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/8.jpg',
+      image: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/8.jpg',
       duration: 1179,
       synopsis:
           '뽀로로와 친구들, 이번엔 공룡섬이다!\n공룡섬에서 펼쳐지는 스펙터클한 대결이 시작된다!\n뽀로로와 친구들은 숲 속에서 ‘알’ 모양의 비행선에 잠들어 있는 꼬마 공룡 ‘알로’를 발견한다. \n하지만 이름 말고는 아무것도 기억하지 못하는 ‘알로’를 위해 우주선을 고치던 중 비행선이 번쩍하며 ‘크롱’과 ‘알로’를 데리고 멀리 사라져 버린다. \n\n크롱과 알로를 구하기 위해 비행선을 뒤쫓던 뽀로로와 친구들은 공룡섬에 도착하고, \n그곳에서 공룡들을 잡아 외계인들에게 팔아 넘기는 공룡 사냥꾼 ‘Mr. Y’를 만나게 되는데… \n\n과연, 외계인 사냥꾼의 공격을 피해 위험에 빠진 친구들을 구할 수 있을까?',
@@ -175,7 +175,7 @@ class DummysRepository {
       reservationGrade: 1,
       id: '5a54c286e8a71d136fb5378e',
       date: '2017-12-20',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/1.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/1.jpg',
       reservationRate: 35.5,
     ),
     Movie(
@@ -185,7 +185,7 @@ class DummysRepository {
       reservationGrade: 2,
       id: '5a54c1e9e8a71d136fb5376c',
       date: '2017-11-15',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/2.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/2.jpg',
       reservationRate: 12.63,
     ),
     Movie(
@@ -195,7 +195,7 @@ class DummysRepository {
       reservationGrade: 3,
       id: '5a54c1f2e8a71d136fb5376e',
       date: '2017-10-25',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/3.png',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/3.png',
       reservationRate: 6.73,
     ),
     Movie(
@@ -205,7 +205,7 @@ class DummysRepository {
       reservationGrade: 4,
       id: '5a54c1fbe8a71d136fb53770',
       date: '2017-11-09',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/4.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/4.jpg',
       reservationRate: 3.82,
     ),
     Movie(
@@ -215,7 +215,7 @@ class DummysRepository {
       reservationGrade: 5,
       id: '5a54c207e8a71d136fb53772',
       date: '2017-10-03',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/5.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/5.jpg',
       reservationRate: 2.37,
     ),
     Movie(
@@ -225,7 +225,7 @@ class DummysRepository {
       reservationGrade: 6,
       id: '5a54be21e8a71d136fb536a1',
       date: '2017-11-22',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/6.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/6.jpg',
       reservationRate: 61.69,
     ),
     Movie(
@@ -235,7 +235,7 @@ class DummysRepository {
       reservationGrade: 7,
       id: '5a54c2f8e8a71d136fb537a7',
       date: '2018-01-03',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/7.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/7.jpg',
       reservationRate: 14.93,
     ),
     Movie(
@@ -245,7 +245,7 @@ class DummysRepository {
       reservationGrade: 8,
       id: '5a54df5ee8a71d136fb53d75',
       date: '2017-12-07',
-      thumb: 'https://padakpadak.s3.ap-northeast-2.amazonaws.com/image/8.jpg',
+      thumb: 'https://raw.githubusercontent.com/riflockle7/ref/master/1.%20ImageRef/padakpadak/8.jpg',
       reservationRate: 1.93,
     ),
   ]);
@@ -918,7 +918,7 @@ class DummysRepository {
         Comment(
           rating: 10,
           id: '5d80f7061b865e90542b7b36',
-          timestamp: 15687329078833,
+          timestamp: 1568732907,
           writer: 'we',
           contents: 'Eee',
           movieId: '5a54c2f8e8a71d136fb537a7',
@@ -990,7 +990,7 @@ class DummysRepository {
         Comment(
           rating: 10,
           id: '5caced2d1b865eb2fe2020a7',
-          timestamp: 15548367813602,
+          timestamp: 1554836781,
           writer: '민구니',
           contents: '만지지',
           movieId: '5a54c2f8e8a71d136fb537a7',
