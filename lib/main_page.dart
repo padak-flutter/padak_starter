@@ -15,14 +15,14 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // 1-1. 상단화면 (제목 수정)
-        title: Text('Flutter'),
+        title: const Text('Flutter'),
         // 1-1. 상단화면 (좌측 버튼 추가)
 
         // 1-1. 상단화면 (우측 팝업 버튼 및 이벤트 추가)
 
       ),
       // 1-2. 탭 화면 (List, Grid Widget 연동)
-      body: Center(child: Text("Hello Flutter")),
+      body: const Center(child: Text("Hello Flutter")),
       // 1-2. 탭 화면 (bottomNavigationBar 추가)
     );
   }

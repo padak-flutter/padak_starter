@@ -1,8 +1,11 @@
 class CommentsResponse {
-  String movieId;
-  List<Comment> comments;
+  String movieId = "";
+  List<Comment> comments = [];
 
-  CommentsResponse(this.movieId, this.comments);
+  CommentsResponse({
+    required this.movieId,
+    required this.comments,
+  });
 
   // map 구조에서 새로운 CommentsResponse 객체를 생성
   CommentsResponse.fromJson(Map<String, dynamic> json) {
@@ -17,7 +20,7 @@ class CommentsResponse {
 
   // CommentsResponse 객체를 map 구조로 변환
   Map<String, dynamic> toMap() {
-    final map = Map<String, dynamic>();
+    final map = <String, dynamic>{};
     map['movie_id'] = movieId;
     if (comments != null) {
       map['comments'] = comments.map((comment) => comment.toMap()).toList();
@@ -28,25 +31,30 @@ class CommentsResponse {
 
 class Comment {
   // 평점 (1 ~ 10)
-  int rating;
+  int rating = -1;
+
   // 한줄평 고유 ID
-  String id;
+  String id = "";
+
   // 작성일시 UnixStamp 값
-  int timestamp;
+  int timestamp = -1;
+
   // 작성자
-  String writer;
+  String writer = "";
+
   // 한줄평 내용
-  String contents;
+  String contents = "";
+
   // 영화 고유 ID
-  String movieId;
+  String movieId = "";
 
   Comment({
-    this.rating,
-    this.id,
-    this.timestamp,
-    this.writer,
-    this.contents,
-    this.movieId
+    required this.rating,
+    required this.id,
+    required this.timestamp,
+    required this.writer,
+    required this.contents,
+    required this.movieId,
   });
 
   Comment.fromJson(Map<String, dynamic> json) {
@@ -59,7 +67,7 @@ class Comment {
   }
 
   Map<String, dynamic> toMap() {
-    final map = Map<String, dynamic>();
+    final map = <String, dynamic>{};
     map['rating'] = rating;
     map['id'] = id;
     map['timestamp'] = timestamp;

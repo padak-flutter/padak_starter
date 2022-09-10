@@ -1,49 +1,63 @@
 class MovieResponse {
   // 배우진
-  String actor;
+  String actor = "";
+
   // 개봉일
-  String date;
+  String date = "";
+
   // 감독
-  String director;
+  String director = "";
+
   // 총 관람객수
-  int audience;
+  int audience = 0;
+
   // 유저 평점
-  int userRating;
+  int userRating = 0;
+
   // 영화 고유 ID
-  String id;
+  String id = "";
+
   // 예매율
   double reservationRate;
+
   // 관람 등급 (0 : 전체 / 12 : 12세 / 15 : 15세 / 19 :19세)
-  int grade;
+  int grade = 0;
+
   // 제목
-  String title;
+  String title = "";
+
   // 장르명
-  String genre;
+  String genre = "";
+
   // 포스터 이미지 URL
-  String image;
+  String image = "";
+
   // 영화 상영길이
-  int duration;
+  int duration = 0;
+
   // 줄거리
-  String synopsis;
+  String synopsis = "";
+
   // 예매 순위
-  int reservationGrade;
+  int reservationGrade = 0;
 
   // 생성자
-  MovieResponse(
-      this.actor,
-      this.date,
-      this.director,
-      this.audience,
-      this.userRating,
-      this.id,
-      this.reservationGrade,
-      this.grade,
-      this.title,
-      this.genre,
-      this.image,
-      this.duration,
-      this.synopsis,
-      this.reservationRate);
+  MovieResponse({
+    required this.actor,
+    required this.date,
+    required this.director,
+    required this.audience,
+    required this.userRating,
+    required this.id,
+    required this.reservationGrade,
+    required this.grade,
+    required this.title,
+    required this.genre,
+    required this.image,
+    required this.duration,
+    required this.synopsis,
+    required this.reservationRate,
+  });
 
   // map 구조에서 새로운 MovieResponse 객체를 생성
   MovieResponse.fromJson(Map<String, dynamic> json)
@@ -64,7 +78,7 @@ class MovieResponse {
 
   // MovieResponse 객체를 map 구조로 변환
   Map<String, dynamic> toMap() {
-    final map = Map<String, dynamic>();
+    final map = <String, dynamic>{};
     map['actor'] = actor;
     map['date'] = date;
     map['director'] = director;

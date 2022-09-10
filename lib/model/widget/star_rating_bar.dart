@@ -6,16 +6,18 @@ class StarRatingBar extends StatefulWidget {
   final void Function(int) onRatingChanged;
   final bool isUserInteractionEnabled;
 
-  StarRatingBar({
+  const StarRatingBar({
+    super.key,
     this.size = 40,
     this.rating = 0,
-    this.onRatingChanged,
+    required this.onRatingChanged,
     this.isUserInteractionEnabled = true,
   });
 
   @override
-  _StarRatingBarState createState() => _StarRatingBarState();
+  State<StarRatingBar> createState() => _StarRatingBarState();
 }
+
 
 class _StarRatingBarState extends State<StarRatingBar> {
   double _position = 0;

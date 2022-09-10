@@ -7,7 +7,7 @@ class ListPage extends StatelessWidget {
     // 1-3. 리스트 화면 (동적 데이터 추가)
 
     // 1-3. 리스트 화면 (초기 리스트 구현)
-    return Center(child: Text("list"));
+    return const Center(child: Text("list"));
   }
 
 // 1-3. 리스트 화면 (고정 더미 데이터)

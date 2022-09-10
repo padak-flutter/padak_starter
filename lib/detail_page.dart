@@ -6,22 +6,27 @@ import 'model/response/movie_response.dart';
 class DetailPage extends StatefulWidget {
   final String movieId;
 
-  DetailPage(this.movieId);
+  const DetailPage({
+    required this.movieId,
+    super.key,
+  });
 
   @override
-  State<StatefulWidget> createState() {
-    return _DetailState(movieId);
-  }
+  State<StatefulWidget> createState() => _DetailState();
 }
 
 class _DetailState extends State<DetailPage> {
-  String movieId;
+  String movieId = "";
   String _movieTitle = '';
-  MovieResponse _movieResponse;
-  CommentsResponse _commentsResponse;
+  MovieResponse? _movieResponse;
+  CommentsResponse? _commentsResponse;
 
-  _DetailState(String movieId){
-    this.movieId = movieId;
+  _DetailState();
+
+  @override
+  void initState() {
+    super.initState();
+    movieId = widget.movieId;
   }
 
   @override
@@ -36,8 +41,7 @@ class _DetailState extends State<DetailPage> {
           title: Text('Detail'),
         ),
         // 2-1. 상세 화면 (전체 화면 세팅1)
-        body: Center(child: Text("Detail Page"))
-    );
+        body: Center(child: Text("Detail Page")));
   }
 
   // 2-1. 상세 화면 (전체 화면 세팅2)
@@ -61,20 +65,22 @@ class _DetailState extends State<DetailPage> {
     // 2-3. Synopsis 화면 (화면 구현)
     return Text("영화 줄거리");
   }
+
   Widget _buildMovieCast() {
     // 2-4. MovieCast 화면 (감독 / 출연 구현)
     return Text("감독/출연");
   }
+
   Widget _buildComment() {
     // 2-5. Comment 화면 (화면 구현)
     return Text("댓글 화면");
   }
 
-  // 2-5. Comment 화면 (한줄평 리스트)
+// 2-5. Comment 화면 (한줄평 리스트)
 
-  // 2-5. Comment 화면 (한줄평 아이템 화면 구축)
+// 2-5. Comment 화면 (한줄평 아이템 화면 구축)
 
-  // 2-5. Comment 화면 (포맷에 맞춰 날짜 데이터 반환)
+// 2-5. Comment 화면 (포맷에 맞춰 날짜 데이터 반환)
 
-  // 2-5. Comment 화면 (댓글 입력 창으로 이동)
+// 2-5. Comment 화면 (댓글 입력 창으로 이동)
 }

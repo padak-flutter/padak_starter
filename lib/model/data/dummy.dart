@@ -13,7 +13,7 @@ Future<String> loadJsonStr(String assetPath) async {
 @Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<MoviesResponse> loadMoviesData(String assetPath) async {
   final jsonString = await loadJsonStr(assetPath);
-  final Map userMap = json.jsonDecode(jsonString);
+  final Map<String, dynamic> userMap = json.jsonDecode(jsonString);
   final data = MoviesResponse.fromJson(userMap);
   return data;
 }
@@ -21,7 +21,7 @@ Future<MoviesResponse> loadMoviesData(String assetPath) async {
 @Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<MovieResponse> loadMovieData(String assetPath) async {
   final jsonString = await loadJsonStr(assetPath);
-  final Map userMap = json.jsonDecode(jsonString);
+  final Map<String, dynamic> userMap = json.jsonDecode(jsonString);
   final data = MovieResponse.fromJson(userMap);
   return data;
 }
@@ -29,7 +29,7 @@ Future<MovieResponse> loadMovieData(String assetPath) async {
 @Deprecated("Asynchronous communication will use Server Communication Chapter")
 Future<CommentsResponse> loadCommentsData(String assetPath) async {
   final jsonString = await loadJsonStr(assetPath);
-  final Map userMap = json.jsonDecode(jsonString);
+  final Map<String, dynamic> userMap = json.jsonDecode(jsonString);
   final data = CommentsResponse.fromJson(userMap);
   return data;
 }
