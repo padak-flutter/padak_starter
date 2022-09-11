@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:padak_starter/detail_page.dart';
-
-import 'model/data/dummys_repository.dart';
 import 'model/response/movies_response.dart';
 
 class GridPage extends StatelessWidget {
-  final List<Movie> movies = DummysRepository.loadDummyMovies();
+  final List<Movie> movies;
+
+  const GridPage({
+    required this.movies,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

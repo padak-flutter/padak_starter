@@ -40,6 +40,9 @@ dependencies:
   # 2-2. 상세화면 (NumberFormat 라이브러리 임포트)
   intl: ^0.17.0
 
+  # 4-1. 메인화면 - (Http 라이브러리 임포트)
+  http: ^0.13.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
