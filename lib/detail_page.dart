@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:intl/intl.dart';
 import 'package:padak_starter/comment_page.dart';
 import 'package:padak_starter/model/data/dummys_repository.dart';
+import 'package:padak_starter/model/widget/star_rating_bar.dart';
 
 import 'model/response/comments_response.dart';
 import 'model/response/movie_response.dart';
@@ -39,6 +40,7 @@ class _DetailState extends State<DetailPage> {
     // 2-5. 상세 화면 (테스트 데이터 설정 - 댓글 상세)
     _commentsResponse = DummysRepository.loadComments(movieId);
 
+    // 2-1. 상세 화면 (조건문에 따라 위젯 다르게 나오도록 하기) - 1
     if (_movieResponse == null) {
       return const SizedBox();
     } else {
@@ -72,8 +74,11 @@ class DetailBodyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
+        // 2-2. Summary 화면 (movieResponse 데이터 추가)
         DetailMovieSummaryWidget(movieResponse: movieResponse),
+        // 2-3. Synopsis 화면 (movieResponse 데이터 추가)
         DetailMovieSynopsisWidget(movieResponse: movieResponse),
+        // 2-4. Cast 화면 (movieResponse 데이터 추가)
         DetailMovieCastWidget(movieResponse: movieResponse),
         // 2-5. (댓글 입력 창으로 이동을 위해 movieResponse 를 매개변수로 넘겨주기)
         DetailMovieCommentWidget(
@@ -130,9 +135,11 @@ class DetailMovieSummaryWidget extends StatelessWidget {
 
 // 2-2. Summary 화면 (1-2 과정)
 class DetailMovieSummaryTextColumnWidget extends StatelessWidget {
+  // 2-3. Synopsis 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieSummaryTextColumnWidget({
+    // 2-3. Synopsis 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
@@ -267,9 +274,11 @@ class DetailMovieVerticalDividerWidget extends StatelessWidget {
 }
 
 class DetailMovieSynopsisWidget extends StatelessWidget {
+  // 2-3. Synopsis 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieSynopsisWidget({
+    // 2-3. Synopsis 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
@@ -306,9 +315,11 @@ class DetailMovieSynopsisWidget extends StatelessWidget {
 }
 
 class DetailMovieCastWidget extends StatelessWidget {
+  // 2-4. MovieCast 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieCastWidget({
+    // 2-4. MovieCast 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
@@ -372,7 +383,6 @@ class DetailMovieCastWidget extends StatelessWidget {
 
 class DetailMovieCommentWidget extends StatelessWidget {
   final CommentsResponse? commentsResponse;
-
   // 2-5. Comment 화면 (댓글 입력 창으로 이동을 위해 movieResponse 를 매개변수로 받도록 하기)
   final MovieResponse movieResponse;
 
@@ -481,8 +491,13 @@ class DetailMovieCommentItemWidget extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Text(comment.writer),
-                  // 추후 custom StarRatingBar Widget 적용
-                  const SizedBox(width: 5)
+                  const SizedBox(width: 5),
+                  StarRatingBar(
+                    onRatingChanged: (value) {},
+                    rating: comment.rating.toInt(),
+                    isUserInteractionEnabled: false,
+                    size: 20,
+                  ),
                 ],
               ),
               Text(_convertTimeStampToDataTime(comment.timestamp)),

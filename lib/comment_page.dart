@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:padak_starter/model/widget/star_rating_bar.dart';
 
 class CommentPage extends StatefulWidget {
   final String movieTitle;
@@ -18,10 +19,9 @@ class CommentPageState extends State<CommentPage> {
   String movieTitle = "";
   String movieId = "";
 
-  final scaffoldState = GlobalKey<ScaffoldState>();
-  int _rating = 0;
-  String _writer = "";
-  String _contents = "";
+  ValueNotifier<double> ratingController = ValueNotifier<double>(0.0);
+  TextEditingController writerController = TextEditingController();
+  TextEditingController contentsController = TextEditingController();
 
   @override
   void initState() {
@@ -30,48 +30,240 @@ class CommentPageState extends State<CommentPage> {
     movieId = widget.movieId;
   }
 
+  @override
+  void dispose() {
+    ratingController.dispose();
+    writerController.dispose();
+    contentsController.dispose();
+    super.dispose();
+  }
+
   // 3-1. 댓글 입력 화면 (화면 구현)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('한줄평 작성'),
+      appBar: AppBar(
+        title: const Text('한줄평 작성'),
+        actions: <Widget>[
+          CommentSubmitButtonWidget(
+            ratingController: ratingController,
+            writerController: writerController,
+            contentsController: contentsController,
+          ),
+        ],
+      ),
+      body: WillPopScope(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                CommentMovieTitleWidget(movieTitle: movieTitle),
+                CommentUserRatingWidget(ratingController: ratingController),
+                const CommentHorizontalDividerWidget(),
+                CommentNicknameInputFormWidget(
+                  writerController: writerController,
+                ),
+                CommentCommentInputFormWidget(
+                  contentsController: contentsController,
+                )
+              ],
+            ),
+          ),
         ),
-        body: Center(child: Text("Comment Page")));
+        onWillPop: () {
+          Navigator.of(context).pop(false);
+          return Future.value(false);
+        },
+      ),
+    );
   }
+}
 
-  Widget _buildSubmitButton() {
-    // 3-2. 댓글 입력 화면 (_buildSubmitButton)
-    return Center(child: Text("전송"));
-  }
+class CommentSubmitButtonWidget extends StatelessWidget {
+  final ValueNotifier<double> ratingController;
+  final TextEditingController writerController;
+  final TextEditingController contentsController;
 
-  Widget _buildMovieTitle() {
-    // 3-3. 댓글 입력 화면 (_buildMovieTitle)
-    return Text("영화 제목");
-  }
+  const CommentSubmitButtonWidget({
+    Key? key,
+    required this.ratingController,
+    required this.writerController,
+    required this.contentsController,
+  }) : super(key: key);
 
-  Widget _buildUserRating() {
-    // 3-4. 댓글 입력 화면 (_buildUserRating)
-    return Text("유저가 별점을 설정할 수 있는 화면");
-  }
+  @override
+  Widget build(BuildContext context) {
+    // 3-2. 댓글 입력 화면 (CommentSubmitButtonWidget)
+    const sendIcon = Icon(
+      Icons.send,
+      color: Colors.white,
+      size: 25,
+    );
 
-  Widget _buildHorizontalDivider() {
-    // 3-5. 댓글 입력 화면 (_buildHorizontalDivider)
-    return Text("회색 구분선 화면");
+    return IconButton(
+      icon: sendIcon,
+      onPressed: () {
+        if (writerController.text.isEmpty || contentsController.text.isEmpty) {
+          _showSnackBar(context, '모든 정보를 입력해주세요.');
+        } else {
+          print("writer : ${writerController.text}");
+          print("contents : ${contentsController.text}");
+          print("rating : ${ratingController.value}");
+          Navigator.of(context).pop(true);
+        }
+      },
+    );
   }
+}
 
-  Widget _buildNickNameInputForm() {
-    // 3-6. 댓글 입력 화면 (_buildNickNameInputForm)
-    return Text("닉네임 입력");
-  }
+class CommentMovieTitleWidget extends StatelessWidget {
+  final String movieTitle;
 
-  Widget _buildCommentInputForm() {
-    // 3-7. 댓글 입력 화면 (_buildCommentInputForm)
-    return Text("한줄평 입력");
-  }
+  const CommentMovieTitleWidget({
+    required this.movieTitle,
+    Key? key,
+  }) : super(key: key);
 
-  void _showSnackBar(String text) {
-    final snackBar = SnackBar(content: Text(text));
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  @override
+  Widget build(BuildContext context) {
+    // 3-3. 댓글 입력 화면 (CommentMovieTitleWidget)
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Text(
+        movieTitle,
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
+}
+
+class CommentUserRatingWidget extends StatefulWidget {
+  final ValueNotifier<double> ratingController;
+
+  const CommentUserRatingWidget({
+    Key? key,
+    required this.ratingController,
+  }) : super(key: key);
+
+  @override
+  State<CommentUserRatingWidget> createState() =>
+      _CommentUserRatingWidgetState();
+}
+
+class _CommentUserRatingWidgetState extends State<CommentUserRatingWidget> {
+  @override
+  Widget build(BuildContext context) {
+    // 3-4. 댓글 입력 화면 (CommentUserRatingWidget)
+    return Column(
+      children: <Widget>[
+        StarRatingBar(
+          onRatingChanged: (rating) {
+            setState(() {
+              widget.ratingController.value = (rating / 2).toDouble();
+            });
+          },
+        ),
+        Text((widget.ratingController.value).toString())
+      ],
+    );
+  }
+}
+
+class CommentHorizontalDividerWidget extends StatelessWidget {
+  const CommentHorizontalDividerWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // 3-5. 댓글 입력 화면 (CommentHorizontalDividerWidget)
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 14, horizontal: 4),
+      width: double.infinity,
+      height: 10,
+      color: Colors.grey.shade400,
+    );
+  }
+}
+
+class CommentNicknameInputFormWidget extends StatefulWidget {
+  final TextEditingController writerController;
+
+  const CommentNicknameInputFormWidget({
+    required this.writerController,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<CommentNicknameInputFormWidget> createState() =>
+      _CommentNicknameInputFormWidgetState();
+}
+
+class _CommentNicknameInputFormWidgetState
+    extends State<CommentNicknameInputFormWidget> {
+  @override
+  Widget build(BuildContext context) {
+    // 3-6. 댓글 입력 화면 (CommentNicknameInputFormWidget)
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      child: TextField(
+        controller: widget.writerController,
+        maxLines: 1,
+        maxLength: 20,
+        decoration: InputDecoration(
+          hintText: '닉네임을 입력해주세요',
+          fillColor: Colors.white,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: const BorderSide(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CommentCommentInputFormWidget extends StatefulWidget {
+  final TextEditingController contentsController;
+
+  const CommentCommentInputFormWidget({
+    required this.contentsController,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<CommentCommentInputFormWidget> createState() =>
+      _CommentCommentInputFormWidgetState();
+}
+
+class _CommentCommentInputFormWidgetState
+    extends State<CommentCommentInputFormWidget> {
+  @override
+  Widget build(BuildContext context) {
+    // 3-7. 댓글 입력 화면 (CommentCommentInputFormWidget)
+    return Container(
+      margin: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 10),
+      child: TextField(
+        controller: widget.contentsController,
+        maxLines: null,
+        maxLength: 100,
+        decoration: InputDecoration(
+          hintText: '한줄평을 작성해주세요',
+          fillColor: Colors.white,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: const BorderSide(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void _showSnackBar(BuildContext context, String text) {
+  final snackBar = SnackBar(content: Text(text));
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
