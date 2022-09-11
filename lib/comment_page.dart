@@ -38,7 +38,6 @@ class CommentPageState extends State<CommentPage> {
     super.dispose();
   }
 
-  // 3-1. 댓글 입력 화면 (화면 구현)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +94,6 @@ class CommentSubmitButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 3-2. 댓글 입력 화면 (CommentSubmitButtonWidget)
     const sendIcon = Icon(
       Icons.send,
       color: Colors.white,
@@ -128,7 +126,6 @@ class CommentMovieTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 3-3. 댓글 입력 화면 (CommentMovieTitleWidget)
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Text(
@@ -158,7 +155,6 @@ class CommentUserRatingWidget extends StatefulWidget {
 class _CommentUserRatingWidgetState extends State<CommentUserRatingWidget> {
   @override
   Widget build(BuildContext context) {
-    // 3-4. 댓글 입력 화면 (CommentUserRatingWidget)
     return Column(
       children: <Widget>[
         StarRatingBar(
@@ -179,7 +175,6 @@ class CommentHorizontalDividerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 3-5. 댓글 입력 화면 (CommentHorizontalDividerWidget)
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 14, horizontal: 4),
       width: double.infinity,
@@ -206,7 +201,6 @@ class _CommentNicknameInputFormWidgetState
     extends State<CommentNicknameInputFormWidget> {
   @override
   Widget build(BuildContext context) {
-    // 3-6. 댓글 입력 화면 (CommentNicknameInputFormWidget)
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
       child: TextField(
@@ -243,7 +237,6 @@ class _CommentCommentInputFormWidgetState
     extends State<CommentCommentInputFormWidget> {
   @override
   Widget build(BuildContext context) {
-    // 3-7. 댓글 입력 화면 (CommentCommentInputFormWidget)
     return Container(
       margin: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 10),
       child: TextField(

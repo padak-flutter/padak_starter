@@ -1,35 +1,24 @@
 import "package:flutter/material.dart";
 
-// 1-2. 탭 화면 (각 화면 import)
 import 'grid_page.dart';
 import 'list_page.dart';
 
-// 1-2. 탭 화면 (Stateless -> Stateful)
 class MainPage extends StatefulWidget {
-  // 1-2. 탭 화면 (_selectedTabIndex 변수 옮김)
-
-  // 1-2. 탭 화면 (createState 함수 추가)
   @override
   State<StatefulWidget> createState() {
     return _MainPageState();
   }
 }
 
-// 1-2. 탭 화면 (State 구현)
 class _MainPageState extends State<MainPage>{
-  // 1-2. 탭 화면 (탭 인덱스 설정)
   int _selectedTabIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // 1-1. 상단화면 (제목 수정)
         title: const Text('Flutter'),
-        // 1-1. 상단화면 (좌측 버튼 추가)
-        // leading: const Icon(Icons.menu),
 
-        // 1-1. 상단화면 (우측 팝업 버튼 및 이벤트 추가)
         actions: <Widget>[
           PopupMenuButton<int>(
             icon: const Icon(Icons.sort),
@@ -60,9 +49,7 @@ class _MainPageState extends State<MainPage>{
           )
         ],
       ),
-      // 1-2. 탭 화면 (List, Grid Widget 연동)
       body: _selectedTabIndex == 0 ? ListPage() : GridPage(),
-      // 1-2. 탭 화면 (bottomNavigationBar 추가)
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

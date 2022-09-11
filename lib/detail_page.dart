@@ -34,22 +34,17 @@ class _DetailState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    // 2-1. 상세 화면 (테스트 데이터 설정 - 영화 상세)
     _movieResponse = DummysRepository.loadDummyMovie(movieId);
 
-    // 2-5. 상세 화면 (테스트 데이터 설정 - 댓글 상세)
     _commentsResponse = DummysRepository.loadComments(movieId);
 
-    // 2-1. 상세 화면 (조건문에 따라 위젯 다르게 나오도록 하기) - 1
     if (_movieResponse == null) {
       return const SizedBox();
     } else {
       return Scaffold(
         appBar: AppBar(
-          // 2-1. 상세 화면 (제목 설정)
           title: Text(_movieResponse!.title),
         ),
-        // 2-1. 상세 화면 (전체 화면 세팅1)
         body: DetailBodyWidget(
           movieResponse: _movieResponse!,
           commentsResponse: _commentsResponse,
@@ -59,7 +54,6 @@ class _DetailState extends State<DetailPage> {
   }
 }
 
-// 2-1. 상세 화면 (전체 화면 세팅2)
 class DetailBodyWidget extends StatelessWidget {
   final MovieResponse movieResponse;
   final CommentsResponse? commentsResponse;
@@ -74,13 +68,9 @@ class DetailBodyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        // 2-2. Summary 화면 (movieResponse 데이터 추가)
         DetailMovieSummaryWidget(movieResponse: movieResponse),
-        // 2-3. Synopsis 화면 (movieResponse 데이터 추가)
         DetailMovieSynopsisWidget(movieResponse: movieResponse),
-        // 2-4. Cast 화면 (movieResponse 데이터 추가)
         DetailMovieCastWidget(movieResponse: movieResponse),
-        // 2-5. (댓글 입력 창으로 이동을 위해 movieResponse 를 매개변수로 넘겨주기)
         DetailMovieCommentWidget(
           commentsResponse: commentsResponse,
           movieResponse: movieResponse,
@@ -91,22 +81,18 @@ class DetailBodyWidget extends StatelessWidget {
 }
 
 class DetailMovieSummaryWidget extends StatelessWidget {
-  // 2-2. Summary 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieSummaryWidget({
-    // 2-2. Summary 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // 2-2. Summary 화면 (화면 구현)
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        // 영화 포스터와 정보를 보여주는 화면
         Row(
           children: <Widget>[
             Image.network(movieResponse.image, height: 180),
@@ -117,7 +103,6 @@ class DetailMovieSummaryWidget extends StatelessWidget {
 
         const SizedBox(height: 10),
 
-        // 예매율/평점/누적 관객수를 보여주는 화면
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -133,13 +118,10 @@ class DetailMovieSummaryWidget extends StatelessWidget {
   }
 }
 
-// 2-2. Summary 화면 (1-2 과정)
 class DetailMovieSummaryTextColumnWidget extends StatelessWidget {
-  // 2-3. Synopsis 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieSummaryTextColumnWidget({
-    // 2-3. Synopsis 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
@@ -166,7 +148,6 @@ class DetailMovieSummaryTextColumnWidget extends StatelessWidget {
   }
 }
 
-// 2-2. Summary 화면 (2-2 과정 - 예매율)
 class DetailMovieReservationRateWidget extends StatelessWidget {
   final MovieResponse movieResponse;
 
@@ -200,7 +181,6 @@ class DetailMovieReservationRateWidget extends StatelessWidget {
   }
 }
 
-// 2-2. Summary 화면 (2-2 과정 - 평점)
 class DetailMovieUserRatingWidget extends StatelessWidget {
   final MovieResponse movieResponse;
 
@@ -227,7 +207,6 @@ class DetailMovieUserRatingWidget extends StatelessWidget {
   }
 }
 
-// 2-2. Summary 화면 (2-2 과정 - 누적관객수)
 class DetailMovieAudienceWidget extends StatelessWidget {
   final MovieResponse movieResponse;
 
@@ -255,7 +234,6 @@ class DetailMovieAudienceWidget extends StatelessWidget {
   }
 }
 
-// 2-2. Summary 화면 (2-2 과정 - 구분선)
 class DetailMovieVerticalDividerWidget extends StatelessWidget {
   const DetailMovieVerticalDividerWidget({
     Key? key,
@@ -274,18 +252,15 @@ class DetailMovieVerticalDividerWidget extends StatelessWidget {
 }
 
 class DetailMovieSynopsisWidget extends StatelessWidget {
-  // 2-3. Synopsis 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieSynopsisWidget({
-    // 2-3. Synopsis 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // 2-3. Synopsis 화면 (화면 구현)
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -315,18 +290,15 @@ class DetailMovieSynopsisWidget extends StatelessWidget {
 }
 
 class DetailMovieCastWidget extends StatelessWidget {
-  // 2-4. MovieCast 화면 (데이터 추가)
   final MovieResponse movieResponse;
 
   const DetailMovieCastWidget({
-    // 2-4. MovieCast 화면 (데이터 필수화 및 연결)
     required this.movieResponse,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // 2-4. MovieCast 화면 (감독 / 출연 구현)
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -383,19 +355,16 @@ class DetailMovieCastWidget extends StatelessWidget {
 
 class DetailMovieCommentWidget extends StatelessWidget {
   final CommentsResponse? commentsResponse;
-  // 2-5. Comment 화면 (댓글 입력 창으로 이동을 위해 movieResponse 를 매개변수로 받도록 하기)
   final MovieResponse movieResponse;
 
   const DetailMovieCommentWidget({
     Key? key,
     required this.commentsResponse,
-    // 2-5. Comment 화면 (댓글 입력 창으로 이동을 위해 movieResponse 값을 매치시키기)
     required this.movieResponse,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // 2-5. Comment 화면 (화면 구현)
     if (commentsResponse != null && commentsResponse!.comments.isNotEmpty) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -435,7 +404,6 @@ class DetailMovieCommentWidget extends StatelessWidget {
   }
 }
 
-// 2-5. Comment 화면 (한줄평 리스트)
 class DetailMovieCommentListWidget extends StatelessWidget {
   final CommentsResponse? commentsResponse;
 
@@ -462,7 +430,6 @@ class DetailMovieCommentListWidget extends StatelessWidget {
   }
 }
 
-// 2-5. Comment 화면 (한줄평 아이템 화면 구축)
 class DetailMovieCommentItemWidget extends StatelessWidget {
   final Comment comment;
 
@@ -511,14 +478,12 @@ class DetailMovieCommentItemWidget extends StatelessWidget {
   }
 }
 
-// 2-5. Comment 화면 (포맷에 맞춰 날짜 데이터 반환)
 String _convertTimeStampToDataTime(int timestamp) {
   final dateFormatter = DateFormat('yyyy-MM-dd HH:mm:ss');
   return dateFormatter
       .format(DateTime.fromMillisecondsSinceEpoch(timestamp * 1000));
 }
 
-// 2-5. Comment 화면 (댓글 입력 창으로 이동)
 void _presentCommentPage(BuildContext context, MovieResponse movieResponse) {
   Navigator.of(context).push(
     MaterialPageRoute(

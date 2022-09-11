@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:padak_starter/detail_page.dart';
 
-// 1-3. Grid 리스트 화면 (임포트)
 import 'model/data/dummys_repository.dart';
 import 'model/response/movies_response.dart';
 
 class GridPage extends StatelessWidget {
-  // 1-4. Grid 리스트 화면 (동적 데이터 추가)
   final List<Movie> movies = DummysRepository.loadDummyMovies();
 
   @override
   Widget build(BuildContext context) {
-    // 1-4. Grid 리스트 화면 (GridView 구축)
     return GridView.builder(
       scrollDirection: Axis.vertical,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -24,7 +21,6 @@ class GridPage extends StatelessWidget {
   }
 }
 
-// 1-4. Grid 리스트 화면 (Grid 아이템 화면 구축)
 class GridItemWidget extends StatelessWidget {
   final Movie movie;
 
@@ -86,7 +82,6 @@ class GridItemWidget extends StatelessWidget {
   }
 }
 
-// 1-4. Grid 리스트 화면 (관람 등급 이미지 버튼 함수 생성)
 class GridItemGradeImageWidget extends StatelessWidget {
   final int grade;
 
