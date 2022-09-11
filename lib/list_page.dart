@@ -9,14 +9,15 @@ class ListPage extends StatelessWidget {
   // 4-2. 메인화면 - ListPage 매개변수 생성
   final List<Movie> movies;
 
+  // 4-2. 메인화면 - ListPage 생성자 만들기
   const ListPage({
-    // 4-2. 메인화면 - ListPage 매개변수에 값 주입
     required this.movies,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    // 4-2. 메인화면 - movies 변수 삭제
     return ListView.separated(
       separatorBuilder: (_, index) => const Divider(color: Colors.grey),
       itemCount: movies.length,

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:padak_starter/dataSource/movie_data_source.dart';
 import 'package:padak_starter/model/widget/star_rating_bar.dart';
 
 class CommentPage extends StatefulWidget {
@@ -45,6 +46,8 @@ class CommentPageState extends State<CommentPage> {
         title: const Text('한줄평 작성'),
         actions: <Widget>[
           CommentSubmitButtonWidget(
+            // 6-1. 한줄평 입력 화면 - movieId 매개변수 입력
+            movieId: movieId,
             ratingController: ratingController,
             writerController: writerController,
             contentsController: contentsController,
@@ -81,12 +84,16 @@ class CommentPageState extends State<CommentPage> {
 }
 
 class CommentSubmitButtonWidget extends StatelessWidget {
+  // 6-1. 한줄평 입력 화면 - movieId 매개변수로 등록
+  final String movieId;
   final ValueNotifier<double> ratingController;
   final TextEditingController writerController;
   final TextEditingController contentsController;
 
   const CommentSubmitButtonWidget({
     Key? key,
+    // 6-1. 한줄평 입력 화면 - movieId 주입
+    required this.movieId,
     required this.ratingController,
     required this.writerController,
     required this.contentsController,
@@ -109,7 +116,30 @@ class CommentSubmitButtonWidget extends StatelessWidget {
           print("writer : ${writerController.text}");
           print("contents : ${contentsController.text}");
           print("rating : ${ratingController.value}");
-          Navigator.of(context).pop(true);
+          // 6-1. 한줄평 입력 화면 - 4. 한줄평 목록 API 요청
+          // (DateTime.now().millisecondsSinceEpoch.toDouble() / 1000).toInt() 와 같은 말입니다.
+          final currentTime =
+              DateTime.now().millisecondsSinceEpoch.toDouble() ~/ 1000;
+          MovieDataSource.postComment(
+            rating: ratingController.value.toInt(),
+            movie: movieId,
+            timestamp: currentTime,
+            writer: writerController.text,
+            contents: contentsController.text,
+          ).then((value) {
+            const snackBar = SnackBar(
+              content: Text('한줄평 등록에 성공했습니다.'),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            Navigator.of(context).pop(true);
+          }).catchError((error) {
+            const snackBar = SnackBar(
+              content: Text('API 오류가 발생했습니다. 한줄평 등록에 실패했습니다.'),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+            Navigator.of(context).pop(true);
+          });
         }
       },
     );
