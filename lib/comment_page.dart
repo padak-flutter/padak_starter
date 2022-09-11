@@ -45,6 +45,8 @@ class CommentPageState extends State<CommentPage> {
         title: const Text('한줄평 작성'),
         actions: <Widget>[
           CommentSubmitButtonWidget(
+            // 6-1. 한줄평 입력 화면 - movieId 매개변수 입력
+
             ratingController: ratingController,
             writerController: writerController,
             contentsController: contentsController,
@@ -81,12 +83,16 @@ class CommentPageState extends State<CommentPage> {
 }
 
 class CommentSubmitButtonWidget extends StatelessWidget {
+  // 6-1. 한줄평 입력 화면 - movieId 매개변수로 등록
+
   final ValueNotifier<double> ratingController;
   final TextEditingController writerController;
   final TextEditingController contentsController;
 
   const CommentSubmitButtonWidget({
     Key? key,
+    // 6-1. 한줄평 입력 화면 - movieId 주입
+
     required this.ratingController,
     required this.writerController,
     required this.contentsController,
@@ -109,6 +115,7 @@ class CommentSubmitButtonWidget extends StatelessWidget {
           print("writer : ${writerController.text}");
           print("contents : ${contentsController.text}");
           print("rating : ${ratingController.value}");
+          // 6-1. 한줄평 입력 화면 - 4. 한줄평 목록 API 요청
           Navigator.of(context).pop(true);
         }
       },

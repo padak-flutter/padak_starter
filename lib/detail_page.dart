@@ -30,15 +30,20 @@ class _DetailState extends State<DetailPage> {
   void initState() {
     super.initState();
     movieId = widget.movieId;
+
+    // 5-1. 상세화면 - initState() 에서 영화 상세 데이터를 가져옵니다.
+
+    // 5-2. 상세화면 - initState() 에서 영화 한줄평 목록을 가져옵니다.
   }
 
   @override
   Widget build(BuildContext context) {
     _movieResponse = DummysRepository.loadDummyMovie(movieId);
-
+    // 5-2. 상세화면 - 한줄평 목록 더미 삭제
     _commentsResponse = DummysRepository.loadComments(movieId);
 
     if (_movieResponse == null) {
+      // 5-1. 상세화면 - 데이터를 받아오고 있을 때는 CircleProgressBar 를 띄워줌
       return const SizedBox();
     } else {
       return Scaffold(
@@ -100,9 +105,7 @@ class DetailMovieSummaryWidget extends StatelessWidget {
             DetailMovieSummaryTextColumnWidget(movieResponse: movieResponse),
           ],
         ),
-
         const SizedBox(height: 10),
-
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
