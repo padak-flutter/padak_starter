@@ -17,8 +17,6 @@ class MainPage extends StatefulWidget {
 
 // 1-2. 탭 화면 (State 구현)
 class _MainPageState extends State<MainPage>{
-  // 1-2. 탭 화면 (State 클래스로 _selectedTabIndex 변수 옮김)
-
   // 1-2. 탭 화면 (탭 인덱스 설정)
   int _selectedTabIndex = 0;
 
